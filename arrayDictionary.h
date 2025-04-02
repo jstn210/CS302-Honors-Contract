@@ -25,7 +25,7 @@ class ArrayDictionary : public DictionaryInterface<KeyType, ValueType>{
         void clear() override; 
         bool contains(const KeyType& targetKey) const override;
         ValueType getValue(const KeyType& targetKey) const override;
-        KeyType getKeyAtIndex(const int index) const;
+        KeyType getKeyAtIndex(const int index) const; //Used to access every Entry in Dictionary
 };
 #include "arrayDictionary.cpp"
 #endif

@@ -28,6 +28,7 @@ int ArrayDictionary<KeyType, ValueType>::getNumberOfEntries() const{
     return itemCount;
 }
 
+// Adds in order
 template<class KeyType, class ValueType>
 bool ArrayDictionary<KeyType, ValueType>::add(const KeyType& newKey, const ValueType& newValue){
     bool canAdd = (itemCount < DEFAULT_CAPACITY) && (!contains(newKey));

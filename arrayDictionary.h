@@ -7,6 +7,8 @@
 
 #include "dictionary.h"
 #include "entry.h"
+#include <iostream>
+using namespace std;
 
 template<class KeyType, class ValueType> 
 class ArrayDictionary : public DictionaryInterface<KeyType, ValueType>{
@@ -25,7 +27,15 @@ class ArrayDictionary : public DictionaryInterface<KeyType, ValueType>{
         void clear() override; 
         bool contains(const KeyType& targetKey) const override;
         ValueType getValue(const KeyType& targetKey) const override;
-        KeyType getKeyAtIndex(const int index) const; //Used to access every Entry in Dictionary
+        
+        friend ostream& operator <<(ostream& cout, const ArrayDictionary<KeyType, ValueType>& rhs){
+            cout << "CONTACTS" << endl;
+            for (int i = 0; i < rhs.itemCount; i++){
+                cout << "Name: " << rhs.entries[i].getKey() << "    Phone #: " << rhs.entries[i].getValue() << endl;
+            }
+            cout << endl;
+            return cout;
+        }
 };
 #include "arrayDictionary.cpp"
 #endif

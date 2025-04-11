@@ -9,13 +9,12 @@
 using namespace std;
 
 void addContacts(ArrayDictionary<string, string>& contacts);
-void printContacts(const ArrayDictionary<string, string>& contacts);
 
 int main(){
 
     ArrayDictionary<string, string> contacts;
     addContacts(contacts);
-    printContacts(contacts);
+    cout << contacts;
 
     string addName, addNumber;
     cout << "NEW CONTACT" << endl;
@@ -25,7 +24,7 @@ int main(){
     cin >> addNumber;
     cout << endl;
     contacts.add(addName, addNumber);
-    printContacts(contacts);
+    cout << contacts;
 
     string remName;
 
@@ -34,7 +33,7 @@ int main(){
     cin >> remName;
     cout << endl;
     contacts.remove(remName);
-    printContacts(contacts);
+    cout << contacts;
 
     string searchName;
 
@@ -54,10 +53,3 @@ void addContacts(ArrayDictionary<string, string>& contacts){
     contacts.add("Cole", "909-909-9090");
     contacts.add("Mark", "545-767-1212");
 }
-
-void printContacts(const ArrayDictionary<string, string>& contacts){
-    cout << "CONTACTS" << endl;
-    for (int i = 0; i < contacts.getNumberOfEntries(); i++){
-        cout << "Name: " << contacts.getKeyAtIndex(i) << "    Phone #: " << contacts.getValue(contacts.getKeyAtIndex(i)) << endl;
-    }
-    cout << endl;

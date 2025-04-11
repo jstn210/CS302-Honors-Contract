@@ -90,11 +90,3 @@ ValueType ArrayDictionary<KeyType, ValueType>::getValue(const KeyType& targetKey
     }
     throw "value not found";
 }
-
-template<class KeyType, class ValueType>
-KeyType ArrayDictionary<KeyType, ValueType>::getKeyAtIndex(const int index) const{
-    if (index >= 0 && index < itemCount){
-        return entries[index].getKey();
-    }
-    throw "key not found";
-}

@@ -14,6 +14,7 @@ int main(){
 
     ArrayDictionary<string, string> contacts;
     addContacts(contacts);
+    cout << "CONTACTS" << endl;
     cout << contacts;
 
     string addName, addNumber;
@@ -24,6 +25,7 @@ int main(){
     cin >> addNumber;
     cout << endl;
     contacts.add(addName, addNumber);
+    cout << "CONTACTS" << endl;
     cout << contacts;
 
     string remName;
@@ -33,6 +35,7 @@ int main(){
     cin >> remName;
     cout << endl;
     contacts.remove(remName);
+    cout << "CONTACTS" << endl;
     cout << contacts;
 
     string searchName;

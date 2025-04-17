@@ -29,9 +29,8 @@ class ArrayDictionary : public DictionaryInterface<KeyType, ValueType>{
         ValueType getValue(const KeyType& targetKey) const override;
         
         friend ostream& operator <<(ostream& cout, const ArrayDictionary<KeyType, ValueType>& rhs){
-            cout << "CONTACTS" << endl;
             for (int i = 0; i < rhs.itemCount; i++){
-                cout << "Name: " << rhs.entries[i].getKey() << "    Phone #: " << rhs.entries[i].getValue() << endl;
+                cout << rhs.entries[i].getKey() << "    " << rhs.entries[i].getValue() << endl;
             }
             cout << endl;
             return cout;
